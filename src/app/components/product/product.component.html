@@ -1,0 +1,61 @@
+<div class="search" *ngIf="searchDisplay">
+  <tr>
+    <th colspan="4">
+      Search :
+      <input type="text" class="inputText" [(ngModel)]="queryString" />
+    </th>
+  </tr>
+</div>
+
+<div>
+  <img class="shop-search" (click)="displaySearch()" src="\assets\search.png" />
+</div>
+<div class="filter-options">
+  <a class="options">Sort By</a>
+  <button class="options" (click)="sortByHigtoLow(price)">
+    Price--High Low
+  </button>
+  <button class="options" (click)="sortByLowtoHigh(price)">
+    Price--Low High
+  </button>
+  <button class="options" (click)="sortByDiscount(discount)">
+    Discount
+  </button>
+</div>
+<hr />
+<div class="filters"></div>
+
+<div class="row container-left">
+  <div *ngFor="let product of products | filterdata: queryString:'name'">
+    <div class="col-xs-4 padding-10 img-width">
+      <mat-card class="card-container-phone">
+        <img
+          width="220"
+          height="220"
+          class="image-align-center padding-bottom-10"
+          src="{{ product.img_url }}"
+        />
+        <mat-card-header>
+          <div md-card-avatar class="example-header-image"></div>
+          <md-card-title>
+            <strong class="name">{{ product.name }}</strong>
+          </md-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ product.info }}</p>
+        </mat-card-content>
+        <mat-card-actions class="pricesection">
+          <p class="parastyle">${{ product.price }}</p>
+          <p class="parastyle discount">{{ product.discount }}%off</p>
+          <p class="parastyle discount">
+            {{ product.price * (1 - product.discount / 100) }} Price-after-
+            discount
+          </p>
+        </mat-card-actions>
+        <button (click)="addToCart(product)" class="addbutton">
+          Add to Cart
+        </button>
+      </mat-card>
+    </div>
+  </div>
+</div>
