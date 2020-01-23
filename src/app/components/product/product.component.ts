@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 
 import { Product } from "../../models/Product";
 import { ProductService } from "../../services/product.service";
-import { CartAction } from "app/store/actions/cart.actions";
+import { CartAction } from "../../store/actions/cart.actions";
 
 @Component({
   selector: "product",
