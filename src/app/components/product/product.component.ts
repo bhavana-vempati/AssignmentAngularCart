@@ -15,6 +15,10 @@ export class ProductComponent {
   products: Product[];
   quantity: number;
   orderedProducts;
+  price: any;
+  discount: any;
+  queryString: any;
+
   searchDisplay: boolean = false;
   constructor(
     private productService: ProductService,
