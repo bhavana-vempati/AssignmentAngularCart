@@ -14,39 +14,41 @@ $yellow: yellow;
 .container-left {
   padding-left: 150px;
   .card-container-phone {
-    height: 430px;
+    // height: 430px;
     padding: 18px;
     .image-align-center {
       margin-left: -10px;
+      width: 220px;
+      height: 220px;
     }
-    .name {
-      font-size: 20px;
-      font-style: Verdana;
-      margin-left: -25px;
-    }
+  }
+  .name {
+    font-size: 20px;
+    font-style: Verdana;
+    // margin-left: -25px;
+  }
+  .parastyle {
+    margin-bottom: 0px !important;
+    margin-left: 5px;
+  }
+  .pricesection {
+    padding-bottom: 0px;
+    margin-top: -20px;
+    font-size: 15px;
     .parastyle {
       margin-bottom: 0px !important;
       margin-left: 5px;
     }
-    .pricesection {
-      padding-bottom: 0px;
-      margin-top: -20px;
-      font-size: 15px;
-      .parastyle {
-        margin-bottom: 0px !important;
-        margin-left: 5px;
-      }
-      .discountcss {
-        color: $green;
-        font-weight: bold;
-      }
+    .discountcss {
+      color: $green;
+      font-weight: bold;
     }
-    .addbutton {
-      background-color: $yellow;
-      border-radius: 30px;
-      border-width: 0px;
-      padding: 10px 20px 10px 20px;
-    }
+  }
+  .addbutton {
+    background-color: $yellow;
+    border-radius: 30px;
+    border-width: 0px;
+    padding: 10px 20px 10px 20px;
   }
 }
 .img-width {
@@ -68,8 +70,25 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 @media only screen and(min-width:400px) and (max-width: 736px) {
-  .card-container-phone {
-    height: 65px !important;
-    width: 65px !important;
+  .container-left {
+    padding-left: 0px !important;
+
+    .img-width {
+      width: 50%;
+      //  height: 180px;
+    }
+  }
+  .search {
+    left: 20% !important;
+  }
+}
+@media only screen and(min-width:737px) and (max-width: 1100px) {
+  .img-width {
+    width: 33.33%;
+    //  height: 180px;
+  }
+  .image-align-center {
+    width: 175px !important;
+    height: 175px !important;
   }
 }

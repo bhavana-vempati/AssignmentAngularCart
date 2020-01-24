@@ -1,4 +1,4 @@
-<div class="search" *ngIf="searchDisplay">
+<div class="search">
   <tr>
     <th colspan="4">
       Search :
@@ -7,9 +7,9 @@
   </tr>
 </div>
 
-<div>
+<!-- <div>
   <img class="shop-search" (click)="displaySearch()" src="\assets\search.png" />
-</div>
+</div> -->
 <div class="filter-options">
   <a class="options">Sort By</a>
   <button class="options" (click)="sortByHigtoLow(price)">
@@ -26,36 +26,36 @@
 <div class="filters"></div>
 
 <div class="row container-left">
-  <div *ngFor="let product of products | filterdata: queryString:'name'">
+  <div
+    class="div-space"
+    *ngFor="let product of products | filterdata: queryString:'name'"
+  >
     <div class="col-xs-4 padding-10 img-width">
-      <mat-card class="card-container-phone">
+      <div class="card-container-phone">
         <img
-          width="220"
-          height="220"
           class="image-align-center padding-bottom-10"
           src="{{ product.img_url }}"
         />
-        <mat-card-header>
-          <div md-card-avatar class="example-header-image"></div>
-          <md-card-title>
-            <strong class="name">{{ product.name }}</strong>
-          </md-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ product.info }}</p>
-        </mat-card-content>
-        <mat-card-actions class="pricesection">
-          <p class="parastyle">${{ product.price }}</p>
-          <p class="parastyle discountcss">{{ product.discount }}%off</p>
-          <p class="parastyle discountcss">
-            {{ product.price * (1 - product.discount / 100) }} Price-after-
-            discount
-          </p>
-        </mat-card-actions>
-        <button (click)="addToCart(product)" class="addbutton">
-          Add to Cart
-        </button>
-      </mat-card>
+      </div>
+      <div class="example-header-image">
+        <div>
+          <strong class="name">{{ product.name }}</strong>
+        </div>
+      </div>
+      <div>
+        <p>{{ product.info }}</p>
+      </div>
+      <div class="pricesection">
+        <p class="parastyle">${{ product.price }}</p>
+        <p class="parastyle discountcss">{{ product.discount }}%off</p>
+        <p class="parastyle discountcss">
+          {{ product.price * (1 - product.discount / 100) }} Price-after-
+          discount
+        </p>
+      </div>
+      <button (click)="addToCart(product)" class="addbutton">
+        Add to Cart
+      </button>
     </div>
   </div>
 </div>

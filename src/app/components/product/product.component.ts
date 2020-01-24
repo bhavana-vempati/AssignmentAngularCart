@@ -19,7 +19,7 @@ export class ProductComponent {
   discount: any;
   queryString: any;
 
-  searchDisplay: boolean = false;
+  //  searchDisplay: boolean = false;
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -42,9 +42,9 @@ export class ProductComponent {
       .getProducts()
       .then(products => (this.products = products));
   }
-  displaySearch() {
-    this.searchDisplay = true;
-  }
+  //   displaySearch() {
+  //     this.searchDisplay = true;
+  //   }
   ngOnInit() {
     // Get initial data from productService to display on the page
     this.getProductData();
